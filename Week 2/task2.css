@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(202, 182, 182);
+}
+.head {
+    margin-left: 600px;
+    margin-left: 600px;
+}
+.head h3 {
+    margin-top: -10px;
+    margin-left: 40px;
+}
+.head ul {
+    margin-top: -10px;
+    margin-left: 60px;
+}
+.container {
+    list-style-type: none;
+    padding: 0px;
+}
+.container li {
+    display: inline-block;
+    margin-right: 2px;
+}
+.icon {
+    width: 25px;
+    height: 25px;
+}
+.imgsize {
+   margin-left: 20px;
+   margin-top: 5px;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+.aboutme {
+    margin: 0px 80px;
+    display: grid;
+    background-color: lightcyan;
+}
+.aboutme h2 {
+    margin-left: 20px;
+}
+.profile {
+    display: inline-block;
+    width: 30%;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.profile img {
+    
+    width: 400px;
+}
+.description {
+    display: inline-block;
+    width: 60%;
+    float: left;
+    margin-left: 20px;
+}
+.project {
+    margin: 80px;
+    background-color: lightcyan;
+}
+.project h2 {
+    margin-left: 20px;
+    margin-top: 8px;
+    font-size: 30px;
+}
+.project img {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    
+}

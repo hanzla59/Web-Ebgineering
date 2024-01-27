@@ -1,0 +1,26 @@
+h1 {
+    margin-left: 650px;
+    
+}
+h3 {
+    margin-left: 680px;
+}
+.container {
+    display: flex;
+}
+.di {
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+}
+img {
+    max-width: 250px;
+    max-height: 250px;
+}
+.name {
+    font-weight: bold;
+    font-size: 15px;
+}
+.color {
+    color: red;
+}
