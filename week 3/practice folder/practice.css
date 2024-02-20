@@ -1,17 +1,14 @@
-
-.red {
-    width: 300px;
-    height: 300px;
-    background-color: red;
-    position: relative;
-    margin: 200px;
-}
-.black {
-    width: 300px;
-    height: 300px;
+.flex_container {
+    display: flex;
     background-color: black;
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    z-index: -1;
+    margin: 15px;
+    flex-direction: column-reverse;
+}
+.flex_container>div {
+    background-color: yellow;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold ;
 }
