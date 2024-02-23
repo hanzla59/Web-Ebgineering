@@ -1,11 +1,12 @@
 body {
     font-size: 2em;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(246, 185, 185, 0.1);
 }
 h1 {
     text-align: center;
     margin: 0px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 h3 {
     text-align: center;
@@ -24,27 +25,72 @@ li > a img {
     margin: 2px;
     max-width: 50px;
     max-height: 50px;
+    transition: max-width 0.5s ease ;
+}
+li > a img:hover {
+    max-width: 55px;
+    max-height: 55px;
 }
 .aboutme {
     margin: 100px;
+    background-color: rgb(220, 235, 248, 0.4);
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.aboutme > h2 {
+    margin: 0px;
+    margin: 10px;
 }
 .aboutme > .content {
     display: flex;
+    
 }
 .content > img {
     border-radius: 100%;
     max-width: 300px;
     max-height: 300px;
+    margin: 10px;
+    border: 10px solid black;
 }
 .content > p {
     padding: 10px;
+    padding-left: 15px;
 }
-.aboutme > p {
-    display: inline-block;
+.aboutme:hover {
+    background-color: red;
+    box-shadow: 10px 10px 20px rgb(123, 122, 122, 0.5);
 }
+.aboutme:hover > h2 {
+    color: white;
+}
+.aboutme:hover > .content > p {
+    color: white;
+}
+.aboutme:hover > .content > img {
+    border: 10px solid rgb(255, 255, 255);
+}
+
 .projects {
     margin: 100px;
+    background-color: rgb(220, 235, 248, 0.4);
+    border-radius: 10px;
+    transition: 0.5s ease;
+    padding-top: 20px;
+    padding-left: 10px;
 
+}
+.projects:hover {
+    background-color: red;
+    box-shadow: 10px 10px 20px rgb(123, 122, 122, 0.5);
+}
+.projects:hover > h2 {
+    color:  white;
+}
+.projects > h2 {
+    margin: 10px;
+    margin-bottom: 20px;
 }
 .projectimg {
     display: flex;
@@ -54,4 +100,11 @@ li > a img {
     margin: 8px;
     width: 391px;
     height: 230px;
+    filter: blur(3px);
+    transition: 0.5s ease;
+}
+.projectimg > img:hover {
+    filter: blur(0px);
+    box-shadow: 5px 5px 10px rgb(159, 159, 159, 0.5);
+
 }
