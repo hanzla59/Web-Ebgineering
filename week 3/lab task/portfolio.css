@@ -1,0 +1,57 @@
+body {
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    text-align: center;
+    margin: 0px;
+    margin-top: 20px;
+}
+h3 {
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px;
+}
+ul {  
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    margin: 0px;
+    margin-top: 10px;
+
+}
+li > a img {
+    margin: 2px;
+    max-width: 50px;
+    max-height: 50px;
+}
+.aboutme {
+    margin: 100px;
+}
+.aboutme > .content {
+    display: flex;
+}
+.content > img {
+    border-radius: 100%;
+    max-width: 300px;
+    max-height: 300px;
+}
+.content > p {
+    padding: 10px;
+}
+.aboutme > p {
+    display: inline-block;
+}
+.projects {
+    margin: 100px;
+
+}
+.projectimg {
+    display: flex;
+    justify-content: center;
+}
+.projectimg > img {
+    margin: 8px;
+    width: 391px;
+    height: 230px;
+}
