@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Week 4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tailwind CSS</title>
 </head>
+
 <body>
-    <p id="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, consequatur?</p>
-    <button type="button" onclick="document.getElementById('demo').innerHTML='Hanzla Tahir'">change text</button>
-    <script src="practice.js"></script>
+    <nav class="px-4 py-5 bg-purple-900 text-white">
+        <ul class="flex bg-black">
+            <li class="mx-2 cursor-pointer">Home</li>
+            <li class="mx-2 cursor-pointer">Buy Now</li>
+            <li class="mx-2 cursor-pointer">Contact Us</li>
+            <li class="mx-2 cursor-pointer">About Us</li>
+        </ul>
+    </nav>
 </body>
+
 </html>
