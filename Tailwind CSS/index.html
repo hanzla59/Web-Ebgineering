@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Task Hub</title>
+    <style>
+        #postTaskForm {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-2xl bg-[#f8fdfc]"> 
+    <nav class="flex justify-between mx-4 my-4 bg-[#eaf5f3] px-3 py-3 rounded-lg shadow-xl ">
+        <div class="px-0.5 py-0.5 ">
+           <a href="index.html"><img src="logo-removebg-preview.png" alt="" class="h-9"></a>
+        </div>
+        <div class="text-[#042a59]">
+            <ul class="flex justify-end gap-5 ]">
+                <li class="cursor-pointer hover:text-[#ba3645]"><a href="#" onclick="toggleFormVisibility()">Post Task</a></li>
+                <li class="cursor-pointer hover:text-[#ba3645]"><a href="HireTasker.html">Hire Tasker</a></li>
+                <li class="cursor-pointer hover:text-[#ba3645]"><a href="Earnmoney.html">Earn Money</a></li>
+                <li class="cursor-pointer hover:text-[#ba3645]"><a href="login.html">Login</a>/<a href="signup.html">SignUp</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="postTaskForm" class="mx-4 my-4 p-4 bg-white rounded-lg shadow-xl">
+        <h2 class="text-[#042a59] text-2xl font-bold mb-4 text-center">Post Task</h2>
+        <form class="text-[#042a59] ">
+            <label for="category" ">Choose Category:</label>
+            <input type="text" id="category" class="bg-red-50 rounded py-1 px-1"><br>
+            <label for="TaskTitle" ">Task Title:</label>
+            <input type="text" id="TaskTitle" class="bg-red-50 rounded py-1 px-1"><br>
+            <label for="description">Description:</label><br>
+            <textarea name="" id="description" cols="30" rows="10" class="bg-red-50 rounded py-1 px-1"></textarea><br>
+            <label for="">Type of Task:</label><br>
+            <label class="inline-flex items-center">
+                <input type="radio" name="taskType" value="online" class="form-radio text-[#ba3645]" />
+                <span class="ml-2">Online Task</span>
+            </label>
+            <label class="inline-flex items-center ml-6">
+                <input type="radio" name="taskType" value="physical" class="form-radio text-[#ba3645]" />
+                <span class="ml-2">Physical Task</span>
+            </label><br>
+            <label for="taskLocation" class="block text-gray-700">Task Location:</label>
+            <input type="text" id="taskLocation" name="taskLocation" class="form-input p-1 border rounded focus:outline-none focus:border-[#ba3645]" placeholder="Enter Task Location"><br>
+            <label for="dueDate" class="block text-gray-700">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate" class="form-input p-1 border rounded focus:outline-none focus:border-[#ba3645]"><br>
+            <button type="submit" class="bg-[#ba3645] text-white py-2 px-4 rounded">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleFormVisibility() {
+            var form = document.getElementById("postTaskForm");
+            form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
+        }
+    </script>
+</body>
+
+</html>
