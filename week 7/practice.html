@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.querySelector Example</title>
+    <style>
+        .example {
+            color: blue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <p class="example">This is a paragraph with class 'example'.</p>
+        <p>This is a regular paragraph.</p>
+    </div>
+    <div id="container">
+        <p class="example">This is a paragraph with class 'example'.</p>
+        <p>This is a regular paragraph.</p>
+    </div>
+    <button id="btn">click me</button>
+
+    <script>
+        
+const btn = document.getElementById("btn");
+btn.onclick = myfunction;
+function myfunction() {
+    let i =0;
+    for(i=0; i<4; i++){
+        const myp = document.getElementsByTagName("p");
+        myp[i].innerHTML = "<h1>this is update h1</h1>";
+    }
+}         
+    </script>
+</body>
+
+</html>

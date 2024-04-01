@@ -17,22 +17,22 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
-        span {
+        #input-tag {
             display: flex;
             justify-content: center;
             margin: 8px;
         }
 
-        span>input {
+        #input-tag>input {
             width: 250px;
         }
 
-        span>label {
+        #input-tag>label {
             font-size: 20px;
             padding: 5px;
         }
 
-        span>button {
+        #input-tag>button {
             font-size: 15px;
             background-color: red;
             color: white;
@@ -40,19 +40,24 @@
         }
 
         div {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.75);
+            box-shadow: 5px 5px 5px rgb(127, 126, 126);
             font-size: 20px;
-            box-shadow: 10px 10px 10px rgb(165, 163, 163);
-            display: inline-block;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 4px;
-            margin: 10px;
+            margin: 10px 150px;
+            
             color: white;
+            border-radius: 10px;
+            
+        }
+        div>span {
             text-align: center;
         }
+        
         .delete-btn {
-            display: inline-block;
             background-color: #ff6666;
             color: white;
             padding: 5px;
@@ -64,7 +69,7 @@
 
 <body>
     <h1>To-Do List</h1>
-    <span>
+    <span id="input-tag">
         <label for="task">Task Title:</label>
         <input type="text" id="task">
         <button id="btn">Add Task</button>
@@ -79,11 +84,18 @@
             if (task.trim() !== "") {
                 const parentElement = document.getElementById("parent");
                 const newElement = document.createElement("div");
-                newElement.textContent = task;
-                newElement.innerHTML = `
-                    <span>${task}</span>
-                    <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
-                `;
+                const taskText = document.createElement("span");
+                taskText.textContent = task;
+                const deleteButton = document.createElement("button");
+                deleteButton.className = "delete-btn";
+                deleteButton.textContent = "Delete";
+                deleteButton.onclick = function() {
+                    deleteTask(newElement);
+                };
+
+                newElement.appendChild(taskText);
+                newElement.appendChild(deleteButton);
+                
                 parentElement.appendChild(newElement);
                 document.getElementById("task").value = ""; 
             } else {
@@ -91,7 +103,10 @@
             }
         }
         
-        
+        function deleteTask(element) {
+            element.remove();
+        }
+
         const btn = document.getElementById("btn");
         btn.onclick = addTask;
         
