@@ -13,10 +13,10 @@
     </div>
     <div style="display: flex; justify-content: center;">
       <button id="left" style="margin: 10px; "><</button>
-      <img id="one" src="./one.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px;">
-      <img id="two" src="./two.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px;">
-      <img id="three" src="./three.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px;">
-      <img id="four" src="./four.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px;">
+      <img id="one" src="./one.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer;">
+      <img id="two" src="./two.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer;">
+      <img id="three" src="./three.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer;">
+      <img id="four" src="./four.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer;">
       <button id="right" style="margin: 10px;">></button>
     </div>
     
@@ -27,8 +27,22 @@
       const onei = document.getElementById("one");
       onei.addEventListener("click", function(){
         const main = document.getElementById("main");
-        
-
+        main.src= onei.src;
+      });
+      const twoi = document.getElementById("two");
+      twoi.addEventListener("click", function(){
+        const main = document.getElementById("main");
+        main.src= twoi.src;
+      });
+      const threei = document.getElementById("three");
+      threei.addEventListener("click", function(){
+        const main = document.getElementById("main");
+        main.src= threei.src;
+      });
+      const fouri = document.getElementById("four");
+      fouri.addEventListener("click", function(){
+        const main = document.getElementById("main");
+        main.src= fouri.src;
       });
       left.addEventListener("click", function(){
 
