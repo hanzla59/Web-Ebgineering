@@ -13,7 +13,7 @@
     </div>
     <div style="display: flex; justify-content: center;">
       <button id="left" style="margin: 10px; "><</button>
-      <img id="one" src="./one.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer;">
+      <img id="one" src="./one.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer; ">
       <img id="two" src="./two.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer;">
       <img id="three" src="./three.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer;">
       <img id="four" src="./four.svg" alt="" style="width: 100px; border: 2px solid black; margin: 10px; cursor: pointer;">
@@ -24,30 +24,54 @@
     <!-- <script src="./index.js"></script> -->
     <script>
       const left = document.getElementById("left");
+      let main;
       const onei = document.getElementById("one");
       onei.addEventListener("click", function(){
-        const main = document.getElementById("main");
+        main = document.getElementById("main");
         main.src= onei.src;
       });
       const twoi = document.getElementById("two");
       twoi.addEventListener("click", function(){
-        const main = document.getElementById("main");
+         main = document.getElementById("main");
         main.src= twoi.src;
       });
       const threei = document.getElementById("three");
       threei.addEventListener("click", function(){
-        const main = document.getElementById("main");
+         main = document.getElementById("main");
         main.src= threei.src;
       });
       const fouri = document.getElementById("four");
       fouri.addEventListener("click", function(){
-        const main = document.getElementById("main");
+         main = document.getElementById("main");
         main.src= fouri.src;
       });
       left.addEventListener("click", function(){
+        if(main.src == fouri.src){
+          main.src= threei.src;
+        }
+        else if(main.src == threei.src){
+          main.src= twoi.src;
+        }
+        else if(main.src == twoi.src){
+          main.src= onei.src;
+        }
 
       });
-      const Right = document.getElementById("Right");
+      const right = document.getElementById("right");
+      right.addEventListener("click", function(){
+        if(main.src == onei.src){
+          main.src = twoi.src;
+        }
+        else if(main.src == twoi.src){
+          main.src = threei.src;
+        }
+        else if(main.src == threei.src){
+          main.src = fouri.src;
+        }
+        
+      });
+      
+      
     </script>
   </body>
 </html>
