@@ -48,12 +48,25 @@
       left.addEventListener("click", function(){
         if(main.src == fouri.src){
           main.src= threei.src;
+          onei.style.opacity = "40%";
+          twoi.style.opacity = "40%";
+          threei.style.opacity = "100%";
+          fouri.style.opacity = "40%";
         }
         else if(main.src == threei.src){
           main.src= twoi.src;
+          onei.style.opacity = "40%";
+          twoi.style.opacity = "100%";
+          threei.style.opacity = "40%";
+          fouri.style.opacity = "40%";
         }
         else if(main.src == twoi.src){
           main.src= onei.src;
+          onei.style.opacity = "100%";
+          twoi.style.opacity = "40%";
+          threei.style.opacity = "40%";
+          fouri.style.opacity = "40%";
+          
         }
 
       });
@@ -61,12 +74,24 @@
       right.addEventListener("click", function(){
         if(main.src == onei.src){
           main.src = twoi.src;
+          onei.style.opacity = "40%";
+          twoi.style.opacity = "100%";
+          threei.style.opacity = "40%";
+          fouri.style.opacity = "40%";
         }
         else if(main.src == twoi.src){
           main.src = threei.src;
+          onei.style.opacity = "40%";
+          twoi.style.opacity = "40%";
+          threei.style.opacity = "100%";
+          fouri.style.opacity = "40%";
         }
         else if(main.src == threei.src){
           main.src = fouri.src;
+          onei.style.opacity = "40%";
+          twoi.style.opacity = "40%";
+          threei.style.opacity = "40%";
+          fouri.style.opacity = "100%";
         }
         
       });
