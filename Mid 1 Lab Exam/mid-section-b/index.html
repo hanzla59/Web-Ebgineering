@@ -68,6 +68,14 @@
           fouri.style.opacity = "40%";
           
         }
+        else if(main.src == onei.src){
+          main.src= fouri.src;
+          onei.style.opacity = "40%";
+          twoi.style.opacity = "40%";
+          threei.style.opacity = "40%";
+          fouri.style.opacity = "100%";
+          
+        }
 
       });
       const right = document.getElementById("right");
@@ -92,6 +100,13 @@
           twoi.style.opacity = "40%";
           threei.style.opacity = "40%";
           fouri.style.opacity = "100%";
+        }
+        else if(main.src == fouri.src){
+          main.src = onei.src;
+          onei.style.opacity = "0%";
+          twoi.style.opacity = "40%";
+          threei.style.opacity = "40%";
+          fouri.style.opacity = "40%";
         }
         
       });

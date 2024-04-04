@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="username" id="username"><br>
+    <input type="password" name="" id="password" placeholder="password"><br>
+    <button id="submit">Submit</button>
+    <button id="show">Show all username and password</button>
+
+    <script>
+        const btn = document.getElementById("submit");
+        btn.addEventListener("click", function () {
+            const obj = { username: "Hanzla", password: "password123", age: "22" };
+            localStorage.setItem("user", JSON.stringify(obj));
+
+            
+            const storedObj = JSON.parse(localStorage.getItem("user"));
+            console.log(storedObj.age); 
+        });
+        const show = document.getElementById("show");
+        show.addEventListener("click", function () {
+            const keys = Object.keys(localStorage);
+            let result = "";
+            keys.forEach(key => {
+                result += `Username: ${key}, Password: ${localStorage.getItem(key)}\n`;
+            });
+            alert(result);
+        });
+    </script>
+
+
+
+    </script>
+</body>
+
+</html>
