@@ -6,35 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<input type="text" id="name" placeholder="name"><br>
+<input type="text" name="" id="age" placeholder="age"><br>
+<input type="text" name="" id="city" placeholder="city">
+<button id="btn">Run this</button>
 
 <body>
-    <input type="text" placeholder="username" id="username"><br>
-    <input type="password" name="" id="password" placeholder="password"><br>
-    <button id="submit">Submit</button>
-    <button id="show">Show all username and password</button>
-
     <script>
-        const btn = document.getElementById("submit");
+        const btn = document.getElementById("btn");
         btn.addEventListener("click", function () {
-            const obj = { username: "Hanzla", password: "password123", age: "22" };
-            localStorage.setItem("user", JSON.stringify(obj));
-
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const city = document.getElementById("city").value;
+            function Person(name, age, city) {
+                this.name = name;
+                this.age = age;
+                this.city = city;
+            }
+            const person = new Person(name, age, city);
+            localStorage.setItem(name, JSON.stringify(person));
+            const stored =JSON.parse(localStorage.getItem(name));
+            alert(`Name: ${stored.name}, Age: ${stored.age}, City: ${stored.city}`);
             
-            const storedObj = JSON.parse(localStorage.getItem("user"));
-            console.log(storedObj.age); 
         });
-        const show = document.getElementById("show");
-        show.addEventListener("click", function () {
-            const keys = Object.keys(localStorage);
-            let result = "";
-            keys.forEach(key => {
-                result += `Username: ${key}, Password: ${localStorage.getItem(key)}\n`;
-            });
-            alert(result);
-        });
-    </script>
-
-
 
     </script>
 </body>

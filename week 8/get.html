@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter</title>
+</head>
+
+<body>
+
+    <!-- <div id="container"></div>
+    <script>
+        const name = document.createElement("p");
+        const age = document.createElement("p");
+        const city = document.createElement("p");
+        const kashif = JSON.parse(localStorage.getItem("Kashif"));
+        name.textContent = kashif.name;
+        age.textContent = kashif.age;
+        city.textContent = kashif.city;
+        const container = document.getElementById("container");
+        const task = document.createElement("div");
+        task.style.border = "5px solid green";
+        task.appendChild(name);
+        task.appendChild(age);
+        task.appendChild(city);
+        container.appendChild(task);
+    </script> -->
+    <div id="container"></div>
+
+<script>
+    const container = document.getElementById("container");
+
+    // Iterate over each key in local storage
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i); // Get the key
+        const value = JSON.parse(localStorage.getItem(key)); // Parse the value as JSON
+
+        // Create elements for name, age, and city
+        const name = document.createElement("h1");
+        const age = document.createElement("p");
+        const city = document.createElement("p");
+        const Delete = document.createElement("button");
+        
+
+        // Set text content for name, age, and city
+        name.textContent ="Name:" + value.name;
+        age.textContent = "Age:" + value.age;
+        city.textContent = "City:" + value.city;
+        Delete.textContent = "Delete";
+
+        // Create a task div to hold the name, age, and city elements
+        const task = document.createElement("div");
+        task.style.border = "5px solid green";
+
+        
+        const deleteButton = document.getElementById("Delete");
+        deleteButton.addEventListener("click", function(){
+            localStorage.removeItem(key);
+            alert("Deleted Successfully");
+        });
+    
+        // Append name, age, and city elements to the task div
+        task.appendChild(name);
+        task.appendChild(age);
+        task.appendChild(city);
+        task.appendChild(Delete);
+
+        
+
+        // Append the task div to the container
+        container.appendChild(task);
+    }
+</script>
+
+</body>
+
+</html>
