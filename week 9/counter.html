@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<body>
+    <button id="minus" style="font-size: x-large;">-</button>
+    <span id="num" style="font-size: x-large;">0</span>
+    <button id="plus" style="font-size: x-large;">+</button>
+    <script>
+        const minus = document.getElementById("minus");
+        const plus = document.getElementById("plus");
+        const numElement = document.getElementById("num");
+        
+        minus.onclick = minusnum;
+        function minusnum(){
+            let num = parseInt(numElement.textContent);
+            numElement.textContent = num-1;
+            localStorage.setItem("num", num-1);
+        }
+        plus.onclick = plusnum;
+        function plusnum(){
+           let num = parseInt(numElement.textContent);
+            numElement.textContent = num+1;
+            localStorage.setItem("num", num+1);
+        }
+
+    </script>
+</body>
+</html>

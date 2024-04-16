@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #container {
+            width: 285px;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            padding: 5px;
+            
+        }
+        #container > h1 {
+            text-align: center;
+            font-weight: bold;
+        }
+        div > p {
+            text-align: right;
+            font-size: 30px;
+            background-color: white;
+            margin: 5px 23px;
+            border-radius: 5px;
+            padding: 3px;
+        }
+        button {
+            font-size: 20px;
+            width: 53px;
+            margin: 2px;
+        }
+        #btn {
+            
+            margin: 0px 10px;
+            border-radius: 5px;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Calculator</h1>
+        <p id="output">0</p>
+        <div id="btn">
+            <button id="seven">7</button>
+            <button id="eight">8</button>
+            <button id="nine">9</button>
+            <button id="clear">C</button><br>
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+            <button id="plus">+</button><br>
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+            <button id="minus">-</button><br>
+            <button id="zero">0</button>
+            <button id="multi">*</button>
+            <button id="div">/</button>
+            <button id="equal">=</button>
+        </div>  
+    </div>
+    
+
+
+    <script>
+        const one = document.getElementById("one");
+        one.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 1;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"1";
+                output.textContent = num;
+            }
+            
+        });
+        const two = document.getElementById("two");
+        two.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 2;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"2";
+                output.textContent = num;
+            }
+        });
+        const three = document.getElementById("three");
+        three.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 3;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"3";
+                output.textContent = num;
+            }
+        });
+        const four = document.getElementById("four");
+        four.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 4;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"4";
+                output.textContent = num;
+            }
+        });
+        const five = document.getElementById("five");
+        five.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 5;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"5";
+                output.textContent = num;
+            }
+        });
+        const six = document.getElementById("six");
+        six.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 6;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"6";
+                output.textContent = num;
+            }
+        });
+        const seven = document.getElementById("seven");
+        seven.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 7;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"7";
+                output.textContent = num;
+            }
+        });
+        const eight = document.getElementById("eight");
+        eight.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 8;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"8";
+                output.textContent = num;
+            }
+        });
+        const nine = document.getElementById("nine");
+        nine.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 9;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"9";
+                output.textContent = num;
+            }
+        });
+        const zero = document.getElementById("zero");
+        zero.addEventListener("click", function () {
+            if(output.textContent == 0){
+                output.textContent = 0;
+            }
+            else {
+                let num = output.textContent;
+                num = num +"0";
+                output.textContent = num;
+            }
+        });
+        let first_num;
+        let second_num;
+        let operator;
+        const plus = document.getElementById("plus");
+        plus.addEventListener("click", function(){
+            first_num = parseInt(output.textContent);
+            operator = "+";
+            output.textContent = 0;
+        });
+        const minus = document.getElementById("minus");
+        minus.addEventListener("click", function(){
+            first_num = parseInt(output.textContent);
+            operator = "-";
+            output.textContent = 0;
+        });
+        const divide = document.getElementById("div");
+        divide.addEventListener("click", function(){
+            first_num = parseInt(output.textContent);
+            operator = "/";
+            output.textContent = 0;
+        });
+        const multi = document.getElementById("multi");
+        multi.addEventListener("click", function(){
+            first_num = parseInt(output.textContent);
+            operator = "*";
+            output.textContent = 0;
+        })
+        const clear = document.getElementById("clear");
+        clear.addEventListener("click", function () {
+            output.textContent = 0;
+        });
+        const equal = document.getElementById("equal");
+        equal.addEventListener("click", function(){
+            second_num = parseInt(output.textContent);
+            if(operator=="+"){
+                let result = first_num+second_num;
+                output.textContent = result;
+            }
+            else if(operator=="-"){
+                let result = first_num-second_num;
+                output.textContent = result;
+            }
+            else if(operator=="/"){
+                let result = first_num/second_num;
+                output.textContent = result;
+            }
+            else if(operator=="*"){
+                let result = first_num*second_num;
+                output.textContent = result;
+            }
+        });
+        const output = document.getElementById("output");
+
+
+    </script>
+</body>
+
+</html>
