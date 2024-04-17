@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Live price convertor of BitCoin</h1>
+    <input type="text" name="" id="inp" placeholder="Enter BTC Quantity">
+    <p id="price" style="font-size: larger; font-weight: bold;"></p>
+
+    <button id="usd">Price in USD</button>
+    <button id="eur">Price in EUR</button>
+    <button id="gbp">Price in GBP</button>
+
+    <script>
+        // const dog_url = "https://dog.ceo/api/breeds/image/random"
+        // const para = document.getElementById("random");
+        // const btn = document.getElementById("btn");
+       
+        // const getFacts = async () => {
+        //     let response = await fetch(dog_url);
+        //     console.log(response);
+        //     let data = await response.json();
+        //     console.log(data);
+        //     para.src = data.message
+
+        // }
+        // btn.addEventListener("click", getFacts);
+        const price = document.getElementById("price");
+        const usd = document.getElementById("usd");
+        const eur = document.getElementById("eur");
+        const gbp = document.getElementById("gbp");
+        let input;
+
+            const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+            const usd_price = async () => {
+                input = document.getElementById("inp").value;
+                let num =parseFloat(input);
+                let response = await fetch(url);
+                let data = await response.json();
+                let price_in_usd = num*parseFloat(data.bpi.USD.rate.replace(",", ""));
+                price.textContent = price_in_usd + " USD";
+                    
+            }
+        const eur_price = async () => {
+            input = document.getElementById("inp").value;
+            let num = parseFloat(input);
+            let response = await fetch(url);
+            let data = await response.json();
+            let price_in_eur = num*parseFloat(data.bpi.EUR.rate.replace(",", ""));
+            price.textContent = price_in_eur + " EUR";
+        }
+        const gbp_price = async () => {
+            input = document.getElementById("inp").value;
+            let num = parseFloat(input);
+            let response = await fetch(url);
+            let data = await response.json();
+            let price_in_GBP = num*parseFloat(data.bpi.GBP.rate.replace(",", ""));
+            price.textContent = price_in_GBP + " GBP";
+        }
+        usd.addEventListener("click", usd_price);
+        eur.addEventListener("click", eur_price);
+        gbp.addEventListener("click", gbp_price);
+
+    </script>
+</body>
+
+</html>

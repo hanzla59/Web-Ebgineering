@@ -4,7 +4,7 @@ const container = document.getElementById("container");
 const getUsers = () =>
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((apiResult) => apiResult.json())
-    .then((data) => {
+    .then((data) => { 
       users = data;
 
       users.forEach((user) => {
